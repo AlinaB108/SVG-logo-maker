@@ -19,6 +19,13 @@ inquirer
     type: 'input',
     name: 'text',
     message: 'Please enter up to three characters (using uppercase).',
+    validate: (input) => {
+      if (input.length <= 3) {
+        return true;
+      } else {
+        return 'Please enter no more than 3 characters!';
+      }
+    },
   },
   {
     type: 'input',
